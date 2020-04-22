@@ -4,8 +4,10 @@ mapboxgl.accessToken = "pk.eyJ1IjoidGFuaGFpbHVuIiwiYSI6ImNrN3h5NDVjcDAweGYzbG83Y
 let map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v10',
-    center: [-73.96024, 40.80877],
-    zoom: 12
+    center: [-91.05450, 33.40133],
+    zoom: 13,
+    pitch: 0.00,
+    bearing: 34.40
 })
 let navigation = new mapboxgl.NavigationControl({
     showCompass: false
@@ -46,25 +48,26 @@ geolocate.on('geolocate', function(event) {
 
 })
 let marker = new mapboxgl.Marker()
-marker.setLngLat([-73.96007,40.80871])
+marker.setLngLat([-91.06336, 33.41344])
+
 marker.addTo(map)
 
 let popup = new mapboxgl.Popup()
-popup.setHTML('This is the Center for Spatial Research<br /><img src="https://currystonefoundation.org/wp-content/uploads/2018/05/csf_pr_csr_image5.jpg" />')
+popup.setHTML('200 Washington Ave in Greenville, MS. Joe Gow Nue - chain migration of Joe family to open second location (refer to page 64 of Jung) <br /><img src="https://i.redd.it/cb69rpwselk31.jpg" />')
 marker.setPopup(popup)
 
 let data = [
     {
-        location: [-73.96191,40.80762],
-        content: 'I like to eat my lunch here'
+        location: [-91.05505, 33.41444],
+        content: 'Joe Gow Nue #2 second store'
     },
     {
-        location: [-73.95936,40.80610],
-        content: '15 years ago, you could see over the trees'
+        location: [-91.06148, 33.40924],
+        content: 'Chinese Baptist Church'
     },
     {
-        location: [-73.96204,40.80994],
-        content: 'This was once tennis courts'
+        location: [-91.06088, 33.41424],
+        content: 'Commercial national bank'
     },
     ]
     data.forEach(function(d) {
